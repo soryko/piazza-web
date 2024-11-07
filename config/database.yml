@@ -19,7 +19,7 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   host: /tmp
-  
+
 development:
   <<: *default
   database: piazza_development
@@ -80,6 +80,4 @@ test:
 #
 production:
   <<: *default
-  database: piazza_production
-  username: piazza
-  password: <%= ENV["PIAZZA_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATBASE_URL'] %>
